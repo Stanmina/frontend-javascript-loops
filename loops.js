@@ -10,6 +10,9 @@
 // Tip: je kunt de .repeat() methode gebruiken om een karakter een n aantal keer te herhalen... Dit heb je nog niet geleerd, maar bekijk hiervoor dit MDN-artikel eens: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
 // ==========================================
 
+for (let i=0; i <= 5; i++) {
+    console.log("*".repeat(i))
+}
 
 // ==========================================
 // Opdracht 2. Maak een for-loop die 4 keer het woord "loop..." logt, en bij de laatste (vijfde) loop het woord "klaar!"
@@ -20,6 +23,14 @@
 // loop...
 // klaar!
 // ==========================================
+
+for (let i = 0; i < 5; i++) {
+    if (i < 4) {
+        console.log("loop...")
+    } else {
+        console.log("Klaar!")
+    }
+}
 
 
 // ==========================================
@@ -34,8 +45,12 @@
 // 'INV-0006'
 // 'INV-0007'
 // 'INV-0008'
-
 // ==========================================
+
+for (let i = 1; i <= 8; i++) {
+    console.log(`INV-000${i}`)
+}
+
 
 // ==========================================
 // Opdracht 4. Schrijf een for-loop die van 9 tot en met 18 loopt en de uren logt.
@@ -56,6 +71,18 @@
 // 18:00
 // ==========================================
 
+for (let i = 9; i <=18; i++) {
+    const tijd = `${i}:00`;
+    let suffix = '';
+    if (i === 10 || i === 14) 
+        suffix = "Koffiepauze!";
+    else if (i === 12) 
+        suffix = "Lunchpauze!";
+    else if (i === 17) 
+        suffix = "Bijna klaar...";
+
+    console.log(`${tijd} ${suffix}`);
+}
 
 // ==========================================
 // Opdracht 5. Maak een for-loop die van 0 tot 9 loopt en de getallen 0 tot 9 logt.
@@ -72,6 +99,16 @@
 // >> 8
 // >> 9
 // ==========================================
+
+for (i = 0; i <= 9; i++) {
+    let prefix = '';
+    if (i > 2)
+        prefix = '>';
+    if (i > 5)
+        prefix += '>';
+    
+    console.log(`${prefix}${i}`)
+}
 
 
 // ==========================================
@@ -112,5 +149,16 @@
 // etc.
 // ==========================================
 
+for (i = 1; i <= 100; i++) {
+    let output = ``;
+    if (i % 3 === 0)
+        output += "Fizz"
+    if (i % 5 === 0)
+        output += "Buzz"
 
+    if (output.length === 0)
+        console.log(i)
+    else 
+        console.log(output)
+}
 
