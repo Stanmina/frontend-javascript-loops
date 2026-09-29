@@ -23,6 +23,10 @@ const salaryDetails = [
 	{name: 'Otis', salary: 2800}
 ];
 
+salaryDetails.forEach(salaryDetail => {
+	console.log(`Beste ${salaryDetail.name}, je salaris van €${salaryDetail.salary},- is zojuist overgemaakt. Val me nu alsjeblieft niet meer lastig.`)
+})
+
 // ==========================================
 // Opdracht 2. Wanneer iemand een verlof-aanvraag doet, moet Bob eerst uit zijn hoofd uitrekenen of deze medewerker nog
 // voldoende vrije dagen over heeft voor de aanvraag. En dat gaat nog wel eens mis... Zorg ervoor dat het aantal vakantiedagen
@@ -44,6 +48,9 @@ const vacationDays = [
 	{name: 'Otis', totalVacationDays: 25, usedVacationDays: 7},
 ];
 
+vacationDays.forEach(vacationDay => {
+	console.log(`${vacationDay.name} heeft nog ${vacationDay.totalVacationDays - vacationDay.usedVacationDays} vakantiedagen over.`)
+})
 
 // ==========================================
 // Opdracht 3. Bob heeft een lijst van medewerkers en de opleidingen die ze volgen. Hij wil weten wie er een opleiding volgen
@@ -62,6 +69,11 @@ const employeesInTraining = [
 	{name: 'Nina', training: 'Teamworktraining', month: 'Maart'},
 	{name: 'Otis', training: 'Teamworktraining', month: 'Februari'},
 ];
+
+employeesInTraining.forEach(employee => {
+	if (employee.month.toLowerCase() === 'januari')
+		console.log(`${employee.name}: ${employee.training}`)
+})
 
 // ==========================================
 // Opdracht 4a. Medewerkers worden ieder jaar beoordeelt op hun functioneren. Het is aan Bob om de scores om te zetten
@@ -89,6 +101,22 @@ const scores = [
 	{name: 'Otis', score: 100, salaryIncrease: null},
 ];
 
+scores.forEach(scored => {
+	if (scored.score < 60)
+		scored.salaryIncrease = '0%'
+	else if (scored.score >= 60 && scored.score < 70)
+		scored.salaryIncrease = '2%'
+	else if (scored.score >= 70 && scored.score < 90)
+		scored.salaryIncrease = '3%'
+	else if (scored.score >= 90 && scored.score < 100)
+		scored.salaryIncrease = '4%'
+	else if (scored.score === 100)
+		scored.salaryIncrease = '6%'
+
+	console.log(scored.salaryIncrease)
+})
+
+
 // ==========================================
 // Opdracht 4b. Breid je script uit door het percentage op te slaan in de 'salaryIncrease'-property van ieder object in de array.
 
@@ -104,7 +132,7 @@ const scores = [
 // ];
 // ==========================================
 
-
+console.log(scores)
 
 // ==========================================
 // Opdracht 5. Bob wil ervoor zorgen dat al zijn medewerkers een correct bedrijfs-e-mailadres hebben. Deze e-mailadressen moeten
@@ -131,9 +159,19 @@ const employees = [
 	{firstName: 'Otis', lastName: 'Kuiper'},
 ];
 
+employees.forEach(employee => {
+	employee.email = `${employee.firstName}.${employee.lastName}@loop-it-solutions.nl`;
+});
+
+console.log(employees)
+
 // ==========================================
 // Opdracht 6 (BONUS). Bob wil dat alle e-mailadressen in kleine letters worden opgeslagen, zodat ze consistent zijn.
 // Kun je je script aanpassen om dit voor elkaar te krijgen? Dit heb je nog niet geleerd, maar Google is your best friend...
 // ==========================================
 
+employees.forEach(employee => {
+	employee.email = employee.email.toLowerCase();
+});
 
+console.log(employees)
